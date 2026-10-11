@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio pribadi Aris Nur Hidayat, mahasiswa S1 Informatika">
+  <title>Aris Nur Hidayat – Portofolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Navigasi utama">
+      <a href="#beranda" class="logo">Aris<span>.</span></a>
+
+      <!-- Tombol menu (tampil di HP) -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#keahlian">Keahlian</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#sertifikat">Sertifikat</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== BERANDA ===== -->
+    <section id="beranda" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Halo, saya</p>
+          <h1>Aris Nur Hidayat</h1>
+          <p class="hero-role">Mahasiswa S1 Informatika</p>
+          <p class="hero-desc">
+            Saya tertarik pada pemrograman, jaringan komputer, dan desain UI/UX.
+            Website ini berisi sedikit tentang saya, keahlian, proyek, dan sertifikat saya.
+          </p>
+          <div class="hero-buttons">
+            <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+            <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal">
+          <!-- FOTO PROFIL: simpan foto Anda dengan nama foto.jpg di folder yang sama.
+               Jika file belum ada, otomatis tampil inisial "AN". -->
+          <img id="foto" src="foto.jpeg" alt="Foto profil Aris Nur Hidayat">
+          <div id="foto-cadangan" class="photo-placeholder" hidden aria-hidden="true">AN</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TENTANG SAYA ===== -->
+    <section id="tentang" class="section section-alt">
+      <div class="container narrow reveal">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p>
+          Saya Aris Nur Hidayat, mahasiswa yang tertarik pada pemrograman,
+          jaringan komputer, dan desain UI/UX. Saya senang belajar membuat tampilan
+          yang rapi dan mudah digunakan, sekaligus memahami cara kerja jaringan di baliknya.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== KEAHLIAN ===== -->
+    <section id="keahlian" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">Keahlian</h2>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript (dasar)</li>
+          <li>Python (dasar)</li>
+          <li>Figma</li>
+          <li>UI/UX Design</li>
+          <li>Jaringan Komputer</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PROYEK ===== -->
+    <section id="proyek" class="section section-alt">
+      <div class="container narrow reveal">
+        <h2 class="section-title">Proyek</h2>
+        <article class="card media-card">
+          <!-- Gambar proyek: ganti file resepku.jpg jika ingin memakai gambar lain -->
+          <img class="project-img" src="resepku.jpeg" alt="Tampilan awal aplikasi ResepKu dengan slogan Masak Jadi Mudah">
+          <div>
+            <h3>ResepKu</h3>
+            <p class="muted">Rancangan aplikasi resep makanan menggunakan Figma</p>
+            <p>Fitur yang dirancang:</p>
+            <ul class="feature-list">
+              <li>Login</li>
+              <li>Registrasi</li>
+              <li>Pencarian resep</li>
+              <li>Detail resep</li>
+              <li>Panduan memasak</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SERTIFIKAT ===== -->
+    <section id="sertifikat" class="section">
+      <div class="container narrow reveal">
+        <h2 class="section-title">Sertifikat</h2>
+        <article class="card media-card cert-card">
+          <!-- Klik gambar untuk membuka file PDF sertifikat -->
+          <a href="sertifikat-mtcna.pdf" target="_blank" rel="noopener" class="cert-link" aria-label="Buka sertifikat MTCNA (PDF)">
+            <img class="cert-img" src="sertifikat-mtcna.jpeg" alt="Sertifikat MikroTik Certified Network Associate (MTCNA) atas nama Aris Nur Hidayat">
+          </a>
+          <div>
+            <h3>MikroTik Certified Network Associate (MTCNA)</h3>
+            <p class="muted">Diterbitkan oleh MikroTik</p>
+            <dl class="cert-info">
+              <div><dt>Tanggal terbit</dt><dd>17 April 2025</dd></div>
+              <div><dt>Masa berlaku</dt><dd>3 tahun sejak terbit</dd></div>
+              <div><dt>Nomor sertifikat</dt><dd>2504NA2264</dd></div>
+            </dl>
+            <a href="sertifikat-mtcna.pdf" target="_blank" rel="noopener" class="btn btn-outline btn-small">Lihat Sertifikat (PDF)</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== KONTAK ===== -->
+    <section id="kontak" class="section section-alt">
+      <div class="container narrow reveal">
+        <h2 class="section-title">Kontak</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="label">Email</span>
+            <a href="mailto:arisnh02@gmail.com">arisnh02@gmail.com</a>
+          </li>
+          <li>
+            <span class="label">Instagram</span>
+            <a href="https://instagram.com/arisnh01" target="_blank" rel="noopener noreferrer">@arisnh01</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="tahun">2026</span> Aris Nur Hidayat</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

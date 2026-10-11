@@ -1,0 +1,275 @@
+/* =========================================================
+   style.css – Portofolio Aris Nur Hidayat
+   Warna utama ada di :root, cukup ubah di sana untuk ganti tema.
+   ========================================================= */
+
+/* ---------- Warna dan ukuran (mudah diedit) ---------- */
+:root {
+  --biru: #2563eb;
+  --biru-tua: #1d4ed8;
+  --biru-muda: #eff6ff;
+  --putih: #ffffff;
+  --teks: #1e293b;
+  --teks-redup: #64748b;
+  --garis: #e2e8f0;
+  --radius: 12px;
+}
+
+/* ---------- Pengaturan dasar ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* agar judul tidak tertutup navbar */
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--teks);
+  background: var(--putih);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+[hidden] { display: none !important; } /* agar atribut hidden selalu berfungsi */
+a { color: var(--biru); }
+ul { list-style: none; }
+
+.container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.container.narrow { max-width: 720px; }
+.muted { color: var(--teks-redup); }
+
+/* ---------- Navbar ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--garis);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo { font-size: 1.4rem; font-weight: 700; color: var(--teks); text-decoration: none; }
+.logo span { color: var(--biru); }
+
+.nav-menu { display: flex; gap: 24px; }
+.nav-menu a {
+  color: var(--teks);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-menu a:hover { color: var(--biru); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--teks);
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid var(--biru);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--biru); color: #fff; }
+.btn-primary:hover { background: var(--biru-tua); border-color: var(--biru-tua); }
+.btn-outline { color: var(--biru); }
+.btn-outline:hover { background: var(--biru-muda); }
+
+/* ---------- Beranda (Flexbox) ---------- */
+.hero { padding: 80px 0; }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.hero-text { flex: 1; }
+.eyebrow { color: var(--biru); font-weight: 600; }
+.hero h1 { font-size: 2.8rem; line-height: 1.2; }
+.hero-role { color: var(--teks-redup); font-size: 1.2rem; margin: 4px 0 16px; }
+.hero-desc { max-width: 520px; margin-bottom: 28px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.hero-photo { flex: 0 0 280px; }
+.hero-photo img,
+.photo-placeholder {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--biru-muda);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.15);
+}
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--biru);
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.photo-placeholder[hidden] { display: none; }
+
+/* ---------- Section umum ---------- */
+.section { padding: 70px 0; }
+.section-alt { background: var(--biru-muda); }
+.section-title { font-size: 1.9rem; text-align: center; margin-bottom: 32px; }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 10px auto 0;
+  background: var(--biru);
+  border-radius: 2px;
+}
+.narrow > p { text-align: center; }
+
+/* ---------- Kartu (Proyek dan Sertifikat) ---------- */
+.card {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(37, 99, 235, 0.15); }
+.card h3 { color: var(--biru); margin-bottom: 4px; }
+.card .muted { margin-bottom: 12px; }
+.feature-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.feature-list li {
+  background: var(--biru-muda);
+  color: var(--biru-tua);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Kartu dengan gambar di sebelah kiri (Proyek dan Sertifikat) */
+.media-card { display: flex; align-items: center; gap: 28px; }
+.project-img {
+  flex: 0 0 150px;
+  width: 150px;
+  border-radius: 20px;
+  border: 1px solid var(--garis);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+.cert-link { flex: 0 0 200px; width: 200px; }
+.cert-img {
+  width: 100%;
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+  transition: transform 0.25s;
+}
+.cert-link:hover .cert-img { transform: scale(1.03); }
+.cert-info { margin: 12px 0 16px; }
+.cert-info div { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; border-bottom: 1px solid var(--garis); }
+.cert-info dt { color: var(--teks-redup); min-width: 130px; }
+.cert-info dd { font-weight: 600; }
+.btn-small { padding: 8px 18px; font-size: 0.95rem; }
+
+/* ---------- Keahlian ---------- */
+.skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.skills li {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.skills li:hover { background: var(--biru); color: #fff; transform: translateY(-2px); }
+
+/* ---------- Kontak ---------- */
+.contact-list { display: grid; gap: 12px; }
+.contact-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.contact-list .label { color: var(--teks-redup); font-weight: 600; }
+.contact-list a { font-weight: 600; word-break: break-all; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--teks-redup);
+  border-top: 1px solid var(--garis);
+}
+
+/* ---------- Animasi ringan: muncul saat di-scroll ---------- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Hormati pengguna yang mematikan animasi di perangkatnya */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card, .btn, .skills li { transition: none; }
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 720px) {
+  .menu-toggle { display: block; }
+
+  /* Menu turun di bawah navbar dan tersembunyi sampai tombol ditekan */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--putih);
+    border-bottom: 1px solid var(--garis);
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { display: block; padding: 14px 20px; }
+
+  .hero { padding: 40px 0; }
+  .hero-inner { flex-direction: column-reverse; text-align: center; }
+  .hero h1 { font-size: 2.1rem; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-photo { flex: none; }
+  .hero-photo img,
+  .photo-placeholder { width: 200px; height: 200px; font-size: 3rem; }
+
+  .section { padding: 50px 0; }
+
+  /* Gambar di atas teks pada kartu */
+  .media-card { flex-direction: column; text-align: center; }
+  .media-card .feature-list { justify-content: center; }
+  .cert-link { flex: none; width: 100%; max-width: 280px; }
+  .cert-info div { justify-content: center; }
+  .cert-info dt { min-width: 0; }
+}
